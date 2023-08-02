@@ -1,0 +1,109 @@
+* {
+    font-family: Impact, fantasy;
+    color: white;
+  }
+  
+  :root {
+    --cor-secundaria: #ffaf00;
+    /* Define uma variável para a cor secundária */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu {
+    margin: 0 20px;
+  }
+  
+  header {
+    background-color: rgba(19, 17, 17, 0.8);
+    /* Cor com opacidade 50% */
+    font-size: 25px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    float: left;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .menu li a:hover {
+    color: var(--cor-secundaria);
+  }
+  
+  .sub-menu {
+    display: none;
+    list-style: none;
+    position: absolute;
+    background-color: rgba(19, 17, 17, 0.8);
+    padding: 10px;
+    top: 100%;
+    /* Posiciona o submenu abaixo do header */
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .sub-menu li {
+    display: block;
+  }
+  
+  .sub-menu.active {
+    display: block;
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .botao-jogue-agora button {
+    font-size: 30px;
+    width: 200px;
+    cursor: pointer;
+    background: #0BC4E2;
+    border-radius: 20px;
+  }
+  
+  .seta {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    /* Adiciona cursor de mão ao passar por cima */
+  }
+
+@media screen and (max-width: 768px) {
+    
+   
+}
