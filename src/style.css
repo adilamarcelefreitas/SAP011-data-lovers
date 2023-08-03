@@ -19,15 +19,32 @@ h1{
   color: black;
   text-align: center;
   font-size: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+  main {
+  position: relative; /* Necessário para posicionar o .imagem-background */
+
 }
 
   .imagem-background {
-    background-image: url(imagens/latest.png);
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed; /* Para manter a imagem fixa na janela */
-    width: 100%; /* Define a largura para ocupar toda a largura do elemento pai */
-    height: 400px; /* Define a altura da imagem de fundo */
+    background-image: url(imagens/arena.png);
+    width: 6000px;
+    height: 4000px;
+    background-size: cover;
+    z-index: -1; 
+  }
+
+  .imagem-background::before {
+    content: "";
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 6000px;
+    height: 4000px;
+    background-color: rgba(116, 58, 116, 0.5); /* Cor roxa (RGB: 128, 0, 128) com 50% de opacidade */
+    z-index: 0;
   }
 
 
@@ -40,8 +57,8 @@ h1{
     /* Cor com opacidade 50% */
     font-size: 25px;
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
+    align-items: center;
+    justify-content: center;
     width: 100%;
   }
   
