@@ -12,7 +12,22 @@
   body {
     margin: 0;
     padding: 0;
-    background-image: ;
+   
+  }
+
+h1{
+  color: black;
+  text-align: center;
+  font-size: 50px;
+}
+
+  .imagem-background {
+    background-image: url(imagens/latest.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed; /* Para manter a imagem fixa na janela */
+    width: 100%; /* Define a largura para ocupar toda a largura do elemento pai */
+    height: 400px; /* Define a altura da imagem de fundo */
   }
 
 
