@@ -12,15 +12,19 @@
   body {
     margin: 0;
     padding: 0;
-   
+
   }
 
 h1{
-  color: black;
+  color: white;
   text-align: center;
-  font-size: 50px;
+  font-size: 100px;
   padding: 0;
-  margin: 0;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+
 }
 
   main {
@@ -29,24 +33,23 @@ h1{
 }
 
   .imagem-background {
-    background-image: url(imagens/arena.png);
-    width: 6000px;
-    height: 4000px;
+    background-image: url(imagens/arena.png); 
     background-size: cover;
-    z-index: -1; 
-  }
+    /* background-size: cover;
+    z-index: -1;  */
+    width: 1903px;
+    height: 900px;
+  } 
 
   .imagem-background::before {
     content: "";
-    position:fixed;
     top: 0;
     left: 0;
-    width: 6000px;
-    height: 4000px;
-    background-color: rgba(116, 58, 116, 0.5); /* Cor roxa (RGB: 128, 0, 128) com 50% de opacidade */
-    z-index: 0;
-  }
-
+    width: 1000px;
+    height: 800px;
+    background-color: rgba(116, 58, 116, 0.5); /*Cor roxa (RGB: 128, 0, 128) com 50% de opacidade*/ 
+     z-index: 0; 
+   } 
 
   .nav-menu {
     margin: 0 20px;
@@ -70,6 +73,7 @@ h1{
     margin: 0 auto;
     padding: 0px 20px;
     flex-wrap: wrap;
+    width: 100%;
   }
   
   .logo img {
@@ -79,6 +83,7 @@ h1{
     align-items: left;
   
   }
+
   
   .menu {
     list-style: none;
@@ -105,11 +110,6 @@ h1{
     position: absolute;
     background-color: rgba(19, 17, 17, 0.8);
     padding: 10px;
-    /* top: 100%; */
-    /* Posiciona o submenu abaixo do header */
-    /* left: 0;
-    width: 100%;
-    z-index: 1; */
   }
   
   .sub-menu li {
@@ -132,6 +132,7 @@ h1{
     cursor: pointer;
     background: #0BC4E2;
     border-radius: 20px;
+    
   }
   
   .seta {
@@ -140,6 +141,10 @@ h1{
     font-size: 12px;
     cursor: pointer;
     /* Adiciona cursor de mão ao passar por cima */
+  }
+
+  .nav-pai{
+    width: 100%;
   }
 
 @media screen and (max-width: 768px) {
