@@ -12,15 +12,19 @@
   body {
     margin: 0;
     padding: 0;
-   
+
   }
 
 h1{
-  color: black;
+  color: white;
   text-align: center;
   font-size: 50px;
   padding: 0;
-  margin: 0;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+
 }
 
   main {
@@ -29,32 +33,31 @@ h1{
 }
 
   .imagem-background {
-    background-image: url(imagens/arena.png);
-    width: 6000px;
-    height: 4000px;
+    background-image: url(imagens/Summoner.jpg); 
     background-size: cover;
-    z-index: -1; 
-  }
+    /* background-color: rgba(116, 58, 116, 0.5); */
+    width: 100%;
+    height: 900px;
+  } 
 
-  .imagem-background::before {
+/* .imagem-background::before {
     content: "";
-    position:fixed;
     top: 0;
     left: 0;
-    width: 6000px;
-    height: 4000px;
-    background-color: rgba(116, 58, 116, 0.5); /*Opacidade */
-    z-index: 0;
-  }
 
+
+    width: 100%;
+    height: 900px;
+    background-color: rgba(116, 58, 116, 0.5);
+    z-index: -1; 
+} */
 
   .nav-menu {
     margin: 0 20px;
   }
   
   header {
-    background-color: rgba(19, 17, 17, 0.8);
-    /* Cor com opacidade 50% */
+    background-color: rgba(19, 17,  17, 0.9);
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -70,6 +73,7 @@ h1{
     margin: 0 auto;
     padding: 0px 20px;
     flex-wrap: wrap;
+    width: 100%;
   }
   
   .logo img {
@@ -79,7 +83,7 @@ h1{
     align-items: left;
   
   }
-  
+
   .menu {
     list-style: none;
     display: flex;
@@ -99,23 +103,29 @@ h1{
     color: var(--cor-secundaria);
   }
   
-  .sub-menu {
-    display: none;
-    list-style: none;
-    position: absolute;
-    background-color: rgba(19, 17, 17, 0.8);
-    padding: 10px;
-    /* top: 100%; */
-    /* Posiciona o submenu abaixo do header */
-    /* left: 0;
-    width: 100%;
-    z-index: 1; */
+
+  .menu li:hover {
+    display: block;
   }
-  
+
+  .categoria:hover  {
+    display: block;
+  }
+
   .sub-menu li {
     display: block;
   }
+
+  .sub-menu {
   
+    display:block;
+    list-style: none;
+    position: absolute;
+    background-color: rgba(19, 17,  17, 0.9);
+    padding: 10px;
+    z-index: 1;
+  }
+
   .sub-menu.active {
     display: block;
   }
@@ -132,17 +142,40 @@ h1{
     cursor: pointer;
     background: #0BC4E2;
     border-radius: 20px;
+    
   }
   
-  .seta {
+  /* .seta {
     display: inline-block;
     margin-left: 5px;
     font-size: 12px;
     cursor: pointer;
-    /* Adiciona cursor de mão ao passar por cima */
+  } */
+  
+
+  .nav-pai{
+    width: 100%;
+  }
+
+  /* footer */
+  .container-footer {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+  .rodape {
+    background-color: rgba(19, 17, 17, 0.9);
+    /* Cor com opacidade 50% */
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 
 @media screen and (max-width: 768px) {
-    
-   
+
 }
