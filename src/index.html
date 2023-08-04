@@ -17,31 +17,19 @@
 
         <ul class="menu">
           <li class="nav-menu"> <a href="#">Campeões</a></li>
-          <li class="nav-menu categorias" onclick="toggleSubmenu()"> <a href="#">Categorias</a>
-            <!-- Ícone de seta para baixo -->
-            <span class="seta">&#9660;</span>
-            <!-- Início do submenu -->
-            <ul class="sub-menu">
+          <li class="nav-menu categorias" onclick="toggleSubmenu()"> 
+<li <a> href="#">Categorias</a>
+  <ul class="sub-menu">
+    <li><a href="#">Assassinos</a></li>
+    <li><a href="#">Lutadores</a></li>
+    <li><a href="#">Magos</a></li>
+    <li><a href="#">Atiradores</a></li>
+    <li><a href="#">Suportes</a></li>
+    <li><a href="#">Tanques</a></li>
+  </ul>
+</li>
+<!-- ... Continue com os outros itens do menu ... -->
 
-              <select name="" id="" class="categoria-select">
-                <option value="categoria" selected disabled>Categoria</option>
-                <option value="assassinos">Assassinos</option>
-                <option value="lutadores">Lutadores</option>
-                <option value="magos">Magos</option>
-                <option value="atiradores">Atiradores</option>
-                <option value="suportes">Suportes</option>
-                <option value="tanques">Tanques</option>
-              </select>
-
-            </ul>
-            <!-- <ul class="sub-menu">
-              <li><a href="#">Assassinos</a></li>
-              <li><a href="#">Lutadores</a></li>
-              <li><a href="#">Magos</a></li>
-              <li><a href="#">Atiradores</a></li>
-              <li><a href="#">Suporte</a></li>
-              <li><a href="#">Tank</a></li>
-            </ul> -->
             <!-- Fim do submenu -->
           </li>
           <li class="nav-menu"><a href="#">Contato</a></li>
@@ -55,7 +43,7 @@
   </header>
   <main class="imagem-background">
 
-    <h1>Escolha seu campeão</h1>
+   <br><h1>Escolha seu campeão</h1>
     <!-- <div class="imagem-background"></div> -->
 
     <section class="section-cards">
@@ -66,16 +54,22 @@
   </main>
 
   <div id="root"></div>
-  <footer>
+  <footer class="rodape">
+    <div class="container-footer">
+      <p> Desenvolvido por: </p>
+      <p> Ádila Freitas: <a href="" target="_blank">GitHub</a> | <a href="" target="_blank">LinkedIn</a></p>
+      <p> Laura de Freitas <a href="" target="_blank">GitHub</a> | <a href="" target="_blank">LinkedIn</a> </p>
+      <p>&copy; 2023 Card Lovers. Todos os direitos reservados</p>
+    </div>
 
   </footer>
-  <script>
+  <!-- <script>
     function toggleSubmenu() {
       var submenu = document.querySelector('.sub-menu');
       submenu.classList.toggle('active');
     }
 
-  </script>
+  </script> -->
   <script src="main.js" type="module"></script>
 </body>
 
