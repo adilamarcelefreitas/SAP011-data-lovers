@@ -24,7 +24,7 @@ h1{
 }
 
   main {
-  position: relative; /* Necessário para posicionar o .imagem-background */
+  position: relative; /* Necessário para posicionar o .imagem-background ?? */
 
 }
 
@@ -43,7 +43,7 @@ h1{
     left: 0;
     width: 6000px;
     height: 4000px;
-    background-color: rgba(116, 58, 116, 0.5); /* Cor roxa (RGB: 128, 0, 128) com 50% de opacidade */
+    background-color: rgba(116, 58, 116, 0.5); /*Opacidade */
     z-index: 0;
   }
 
