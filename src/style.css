@@ -152,6 +152,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1px;
   margin: 0;
   padding: 0;
   flex-direction: column;
