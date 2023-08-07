@@ -1,5 +1,4 @@
 * {
-  /* font-family: Impact, fantasy; */
   color: white;
   box-sizing: border-box;
 }
@@ -17,13 +16,11 @@ body {
 
 h1 {
   color: white;
-  /* background-color: #ffaf00; */
   text-align: center;
   font-family: "Beaufort for LOL Bold";
   font-size: 90px;
   margin-top: 125px;
   padding: 0;
-  /* margin: auto; */
   position: absolute;
   left: 0;
   right: 0;
@@ -32,7 +29,7 @@ h1 {
 
 main {
   position: relative;
-  
+
 }
 
 .imagem-background {
@@ -41,10 +38,12 @@ main {
   width: 100%;
   height: 900px;
   z-index: 0;
+
 }
 
 .nav-menu {
   margin: 0 20px;
+
 }
 
 header {
@@ -54,6 +53,7 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
+
 }
 
 .container {
@@ -64,6 +64,7 @@ header {
   padding: 0px 20px;
   flex-wrap: wrap;
   width: 100%;
+
 }
 
 .logo img {
@@ -79,23 +80,28 @@ header {
   display: flex;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+
 }
 
 .menu li {
   margin-right: 20px;
+
 }
 
 .menu li a {
   text-decoration: none;
   color: white;
+
 }
 
 .menu li a:hover {
   color: var(--cor-secundaria);
+
 }
 
 .menu li:hover {
   display: block;
+
 }
 
 
@@ -112,10 +118,12 @@ header {
 
 .categorias:hover .sub-menu {
   display: block;
+
 }
 
 .categorias .sub-menu:hover {
   display: block;
+
 }
 
 .sub-menu.active {
@@ -126,6 +134,7 @@ header {
   /* max-width: 1200px; */
   margin: 0 auto;
   padding: 20px;
+
 }
 
 .botao-jogue-agora button {
