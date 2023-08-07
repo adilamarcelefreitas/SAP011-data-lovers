@@ -13,6 +13,7 @@ html{
   background-size: cover;
   background-attachment: fixed;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -31,12 +32,8 @@ h1 {
 
 }
 
-/* main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-} */
+main {
+}
 
 .nav-menu {
   margin: 0 20px;
@@ -140,31 +137,16 @@ header {
   width: 200px;
   cursor: pointer;
   background: #0BC4E2;
-  border-radius: 20px;
+  border-radius:  white, 20px;
 
 }
-
 
 
 .nav-pai {
   width: 100%;
 }
 
-.section-cards {
 
-  /* margin-top: 10px;
-   */
-
-}
-
-/* .container-card {
-  .container-card {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-     justify-content: center; Isso não é necessário para o Grid Layout 
-  }
-} */
 .container-card {
   display: flex;
   flex-wrap: wrap;
@@ -176,24 +158,28 @@ header {
   flex: 0 1 calc(25% - 20px);
   /* 6 cartões em uma linha com espaçamento de 20px */
   margin: 10px;
-  /* Restante do estilo dos cartões... */
+  display: flex;
 }
 
-/* .champion-card {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-} */
 
 .card-front img {
   object-fit: cover;
-  width: 80%
+  width: 80%;
+  border-radius: 20px;
 }
 
 .card-front h3 {
-  margin-top: 0;
-  font-size: 50px;
+  margin-top: -25%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 35px;
+  background-color:  rgba(19, 17, 17, 0.9);
+  z-index: 1;
+  position: relative;
+  width: 50%;
+  left: 25%;
+  border-radius: 50px;
+  
+  
 }
 
 .card-back {
