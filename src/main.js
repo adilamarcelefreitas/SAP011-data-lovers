@@ -1,4 +1,3 @@
-// import { example } from './data.js';
 import data from './data/lol/lol.js';
 
 // Função para criar e exibir os cards dos campeões no DOM
@@ -17,7 +16,7 @@ function createChampionCards(champions) {
 
         // Crie uma imagem para a parte frontal do card
         const img = document.createElement('img');
-        img.src = champion.image.full;
+        img.src = champion.img; // Usando o link da imagem fornecido no objeto 'champion'
         img.alt = champion.name;
 
         // Crie um elemento de nome para a parte frontal do card
