@@ -7,7 +7,8 @@
   --cor-secundaria: #ffaf00;
   /* Define uma variável para a cor secundária */
 }
-html{
+
+html {
   background-image: url(imagens/desktop-1920x1080.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -22,6 +23,7 @@ body {
   margin: 0 20px;
 
 }
+
 /* estilo do header */
 
 header {
@@ -107,13 +109,14 @@ header {
 .sub-menu.active {
   display: block;
 }
+
 /* estilos do main */
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 .content {
@@ -128,7 +131,7 @@ main {
   font-family: Impact, fantasy;
   width: 200px;
   cursor: pointer;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,196,226,1) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(11, 196, 226, 1) 35%, rgba(0, 212, 255, 1) 100%);
   border-radius: 20px;
   border-color: black;
 
@@ -140,32 +143,42 @@ main {
 }
 
 .section-cards {
-  display:flex;
+  display: flex;
 
 }
 
 h1 {
   font-family: "Beaufort for LOL Bold";
   text-align: center;
+  margin-top: 75px;
+
 }
 
+/* Tamanho de fonte menor */
 .small-font {
-  font-size: 20px; /* Tamanho de fonte menor */
-  line-height: 2;
+  font-size: 25px;
+
 }
 
+/* Tamanho de fonte maior */
 .big-font {
-  font-size: 80px; /* Tamanho de fonte maior */
-  line-height: -1;
+  font-size: 90px;
+
+}
+
+.span-container {
+  display: block;
+  /* Faz com que os spans fiquem embaixo um do outro */
+  margin-bottom: 0;
+  /*espaço entre containers*/
 }
 
 /* Estilo dos cartões */
-
 .container-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+
 }
 
 .champion-card {
@@ -173,18 +186,28 @@ h1 {
   /* 4 cartões em uma linha com espaçamento de 20px */
   margin: 30px;
   display: flex;
-  flex-direction: column; /* Adiciona flex-direction: column para o posicionamento vertical */
-  align-items: center; /* Centraliza horizontalmente */
-  text-align: center; /* Centraliza o texto horizontalmente */
+  flex-direction: column;
+  /* Adiciona flex-direction: column para o posicionamento vertical */
+  align-items: center;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
   border: 0px 0px 10px rgba(245, 245, 247, 0.5);
-  padding: 10px; /* Adiciona um padding para dar espaço entre o texto e o card */
+  padding: 10px;
+  /* Adiciona um padding para dar espaço entre o texto e o card */
   border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.6); /* Define a cor de fundo para o card */
-  position: relative; /* Define a posição como relativa para que o corte funcione corretamente */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Define a cor de fundo para o card */
+  position: relative;
+  /* Define a posição como relativa para que o corte funcione corretamente */
   overflow: hidden;
-  transform-style: preserve-3d; 
+  /* transform-style: preserve-3d;  */
+  transition: transform 0.3s;
+
+
 
 }
+
 .champion-card::after {
   content: '';
   position: absolute;
@@ -194,29 +217,33 @@ h1 {
   height: 0;
   border-style: solid;
   backface-visibility: hidden;
-  border-width: 80px 0 0 80px; /* Tamanho do triângulo */
-  border-color: rgb(27, 26, 26, 0.8); /* Cor do triângulo */
-  clip-path: polygon(100% 0, 100% 100%, 0 0); /* Define o polígono para recortar o canto */
+  border-width: 60px 0 0 80px;
+  /* Tamanho do triângulo */
+  border-color: rgb(27, 26, 26, 0.8);
+  /* Cor do triângulo */
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  /* Define o polígono para recortar o canto */
 }
+
 
 .card-front img {
   margin-top: 25px;
   object-fit: cover;
   width: 80%;
   border-radius: 20px;
-  
-}
-
-h3 {
-  text-align: center;
 }
 
 .card-front h3 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 30px; /* Reduz o tamanho da fonte para que caiba melhor no card */
-  color: white; /* Define a cor do texto do h3 como branco */
-  margin-top: 0; /* Remove o margin-top para que o h3 fique colado no topo do card */
-  padding: 10px; /* Adiciona um padding para dar espaço entre o texto e o background */
+  font-family: "Beaufort for LOL Bold";
+  text-transform: uppercase;
+  font-size: 25px;
+  /* Reduz o tamanho da fonte para que caiba melhor no card */
+  color: white;
+  /* Define a cor do texto do h3 como branco */
+  margin-top: 0;
+  /* Remove o margin-top para que o h3 fique colado no topo do card */
+  padding: 10px;
+  /* Adiciona um padding para dar espaço entre o texto e o background */
   border-radius: 20px;
 }
 
@@ -226,49 +253,34 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
+  text-transform: uppercase;
+  font-family: "Beaufort for LOL Bold";
+  font-size: 25px;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) scaleX(-1);
   backface-visibility: hidden;
-  z-index: 1;
-  padding: 10px;
   border-radius: 20px;
+  z-index: 1;
 }
-
-.card-back p {
-  transform: scaleY(-1); 
-}
-
-.card-front {
-  backface-visibility: hidden; /* Torna a parte frontal invisível quando o card está virado */
-
-}
-
 
 .champion-card.flipped {
-  transform: rotateY(180deg); /* Gira o card para o estado de trás */
-  
+  transform: rotateY(180deg);
 }
 
-/* Gire o card para o estado de frente */
+/* Gire o card para o estado de frente*/
 .champion-card.flipped .card-front {
-  transform: perspective(500px) rotateY(0deg);
-  z-index: 2; 
-  transform: perspective(500px) rotateY(180deg);
-  z-index: 1;
-} 
-
-/* Gire o card para o estado de trás */
-.champion-card.flipped .card-back {
-  transform: perspective(500px) rotateY(180deg);
-  z-index: 1;
-  transform: perspective(500px) rotateY(0deg);
-  z-index: 2;
-
+  transform: perspective(900px) rotateY(180deg);
+  backface-visibility: hidden;
 }
+
+.champion-card.flipped .card-back {
+  transform: rotateY(0deg) scaleX(-1); 
+}
+
 
 /*  estilo do footer */
 .container-footer {
@@ -311,4 +323,4 @@ h3 {
     flex: 0 1 calc(50% - 20px);
     /* 2 cartões em uma linha com espaçamento de 20px */
   }
-} 
+}
