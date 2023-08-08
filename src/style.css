@@ -7,7 +7,12 @@
   --cor-secundaria: #ffaf00;
   /* Define uma variável para a cor secundária */
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
 html{
   background-image: url(imagens/desktop-1920x1080.jpg);
   background-size: cover;
@@ -21,18 +26,17 @@ body {
 
 h1 {
   color: white;
+  /* display: flex; */
   text-align: center;
+  /* flex-direction: column; */
   font-family: "Beaufort for LOL Bold";
   font-size: 90px;
-  margin-top: 125px;
-  padding: 0;
-  position: static;
-  left: 0;
-  right: 0;
+  /* margin-top: 125px; */
+  /* padding: 0; */
+  /* position: static; */
+  /* left: 0;
+  right: 0; */
 
-}
-
-main {
 }
 
 .nav-menu {
@@ -136,8 +140,9 @@ header {
   font-family: Impact, fantasy;
   width: 200px;
   cursor: pointer;
-  background: #0BC4E2;
-  border-radius:  white, 20px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,196,226,1) 35%, rgba(0,212,255,1) 100%);
+  border-radius: 20px;
+  border-color: black;
 
 }
 
@@ -146,46 +151,60 @@ header {
   width: 100%;
 }
 
+.section-cards {
+  display:flex;
+
+}
 
 .container-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 /* Estilo dos cartões */
 .champion-card {
-  flex: 0 1 calc(25% - 20px);
-  /* 6 cartões em uma linha com espaçamento de 20px */
-  margin: 10px;
+  flex: 0 1 calc(22% - 20px);
+  /* 4 cartões em uma linha com espaçamento de 20px */
+  margin: 30px;
   display: flex;
+  border: 0px 0px 10px rgba(245, 245, 247, 0.5);
 }
-
 
 .card-front img {
   object-fit: cover;
   width: 80%;
   border-radius: 20px;
+  
 }
 
-.card-front h3 {
+h3 {
   margin-top: -25%;
   font-family: 'Quicksand', sans-serif;
   font-size: 35px;
   background-color:  rgba(19, 17, 17, 0.9);
-  z-index: 1;
   position: relative;
-  width: 50%;
-  left: 25%;
-  border-radius: 50px;
-  
-  
+  /* text-justify: center; */
 }
+
+/* .card-front h3 {
+  
+  /* margin-top: -25%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 35px;
+  background-color:  rgba(19, 17, 17, 0.9); */
+
+/* } */ */
 
 .card-back {
   display: none;
   padding: 10px;
 }
+
+/* .card-back :hover{
+  display:block;
+} */
 
 /* footer */
 .container-footer {
