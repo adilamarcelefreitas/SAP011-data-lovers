@@ -7,12 +7,6 @@
   --cor-secundaria: #ffaf00;
   /* Define uma variável para a cor secundária */
 }
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
 html{
   background-image: url(imagens/desktop-1920x1080.jpg);
   background-size: cover;
@@ -24,25 +18,11 @@ body {
   padding: 0;
 }
 
-h1 {
-  color: white;
-  /* display: flex; */
-  text-align: center;
-  /* flex-direction: column; */
-  font-family: "Beaufort for LOL Bold";
-  font-size: 90px;
-  /* margin-top: 125px; */
-  /* padding: 0; */
-  /* position: static; */
-  /* left: 0;
-  right: 0; */
-
-}
-
 .nav-menu {
   margin: 0 20px;
 
 }
+/* estilo do header */
 
 header {
   background-color: rgba(19, 17, 17, 0.9);
@@ -127,6 +107,14 @@ header {
 .sub-menu.active {
   display: block;
 }
+/* estilos do main */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
 
 .content {
   /* max-width: 1200px; */
@@ -156,23 +144,54 @@ header {
 
 }
 
+h1 {
+  color: white;
+  text-align: center;
+  font-family: "Beaufort for LOL Bold";
+  font-size: 90px;
+}
+
+/* Estilo dos cartões */
+
 .container-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  
 }
 
-/* Estilo dos cartões */
 .champion-card {
   flex: 0 1 calc(22% - 20px);
   /* 4 cartões em uma linha com espaçamento de 20px */
   margin: 30px;
   display: flex;
+  flex-direction: column; /* Adiciona flex-direction: column para o posicionamento vertical */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Centraliza o texto horizontalmente */
   border: 0px 0px 10px rgba(245, 245, 247, 0.5);
+  padding: 10px; /* Adiciona um padding para dar espaço entre o texto e o card */
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Define a cor de fundo para o card */
+  position: relative; /* Define a posição como relativa para que o corte funcione corretamente */
+  overflow: hidden;
+  transform-style: preserve-3d; 
+
+}
+.champion-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 80px 0 0 80px; /* Tamanho do triângulo */
+  border-color: rgb(27, 26, 26, 0.8); /* Cor do triângulo */
+  clip-path: polygon(100% 0, 100% 100%, 0 0); /* Define o polígono para recortar o canto */
 }
 
 .card-front img {
+  margin-top: 25px;
   object-fit: cover;
   width: 80%;
   border-radius: 20px;
@@ -180,33 +199,66 @@ header {
 }
 
 h3 {
-  margin-top: -25%;
+  text-align: center;
+}
+
+.card-front h3 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 35px;
-  background-color:  rgba(19, 17, 17, 0.9);
+  font-size: 30px; /* Reduz o tamanho da fonte para que caiba melhor no card */
+  color: white; /* Define a cor do texto do h3 como branco */
+  margin-top: 0; /* Remove o margin-top para que o h3 fique colado no topo do card */
+  padding: 10px; /* Adiciona um padding para dar espaço entre o texto e o background */
+  border-radius: 20px;
+}
+
+
+/* Gire o card para o estado de frente */
+.champion-card {
   position: relative;
-  /* text-justify: center; */
+  perspective: 1000px; /* Define a perspectiva para criar o efeito 3D */
+  transform-style: preserve-3d; /* Define o estilo de transformação 3D */
+  transition: transform 0.5s; /* Adiciona uma transição suave para a rotação */
 }
 
-/* .card-front h3 {
-  
-  /* margin-top: -25%;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 35px;
-  background-color:  rgba(19, 17, 17, 0.9); */
-
-/* } */ */
-
-.card-back {
-  display: none;
-  padding: 10px;
+.champion-card.flipped {
+  transform: rotateY(180deg); /* Gira o card para o estado de trás */
 }
 
-/* .card-back :hover{
-  display:block;
-} */
+/* Gire o card para o estado de frente */
+.champion-card.flipped .card-front {
+  transform: perspective(900px) rotateY(0deg);
+  z-index: 2;
+} 
 
-/* footer */
+/* Gire o card para o estado de trás */
+.champion-card.flipped .card-back {
+  transform: perspective(900px) rotateY(180deg);
+  z-index: 1;
+}
+
+
+
+
+
+/* Gire o card para o estado de frente */
+/* .champion-card.flipped .card-front {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  z-index: 2; /* Certifique-se de que o card frente esteja acima do card de trás */
+/* } */
+
+/* Gire o card para o estado de trás */
+/* .champion-card.flipped .card-back {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  z-index: 1; /* Certifique-se de que o card de trás esteja atrás do card frente */
+/* } */ 
+
+/*  estilo do footer */
 .container-footer {
   display: flex;
   align-items: center;
@@ -229,6 +281,9 @@ h3 {
 
 }
 
+
+/* deixando responsivo */
+
 @media screen and (max-width: 768px) {
 
   .container {
@@ -244,4 +299,4 @@ h3 {
     flex: 0 1 calc(50% - 20px);
     /* 2 cartões em uma linha com espaçamento de 20px */
   }
-}
+} 

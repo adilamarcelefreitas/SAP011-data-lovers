@@ -43,6 +43,11 @@ function createChampionCards(champions) {
         
         const attack = document.createElement('p');
         attack.textContent = `Ataque: ${champion.info.attack}`;
+
+        //'flipper' do card
+        card.addEventListener('mouseenter', () => {
+            card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
+        });
         
         // Anexe as informações à parte de trás do card
         cardBack.appendChild(defense);
@@ -53,6 +58,8 @@ function createChampionCards(champions) {
         // Anexe as partes frontal e traseira do card ao card do campeão
         card.appendChild(cardFront);
         card.appendChild(cardBack);
+
+
 
         // Anexe o card do campeão ao container de cards
         containerCard.appendChild(card);
