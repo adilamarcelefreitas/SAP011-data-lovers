@@ -97,6 +97,15 @@ linksDeCategoria.forEach(link => {
     filtrarCampeoesPorCategoria(categoriaSelecionada);
   });
 });
+createChampionCards(data);
 
+// Selecione o elemento do botão "Campeões"
+const campeoesButton = document.querySelector('.nav-menu a');
+
+// Adicione um ouvinte de evento para o clique no botão "Campeões"
+campeoesButton.addEventListener('click', () => {
+  // Recarregue a página
+  location.reload();
+});
 // Criação inicial dos cards de campeões
 createChampionCards(data);
