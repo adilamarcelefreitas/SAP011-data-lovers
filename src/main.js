@@ -1,11 +1,12 @@
 import data from './data/lol/lol.js';
+import { funcaoDosCampeoes } from './data.js';
 
 // Função para criar e exibir os cards dos campeões no DOM
-
 function createChampionCards(champions) {
-
   const containerCard = document.querySelector('.container-card');
-for (const championKey in champions.data) {
+  containerCard.innerHTML = ''; // Limpa o contêiner antes de adicionar os novos cards
+
+  for (const championKey in champions.data) {
     const champion = champions.data[championKey];
 
     // Crie um card para o campeão
@@ -48,9 +49,8 @@ for (const championKey in champions.data) {
 
     //'flipper' do card
     card.addEventListener('click', () => {
-    card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
-
-});
+      card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
+    });
 
     // Anexe as informações à parte de trás do card
     cardBack.appendChild(defense);
@@ -62,13 +62,41 @@ for (const championKey in champions.data) {
     card.appendChild(cardFront);
     card.appendChild(cardBack);
 
-
-
     // Anexe o card do campeão ao container de cards
     containerCard.appendChild(card);
-
+  }
 }
+
+// Função para limpar o contêiner de cards
+function clearContainer() {
+  // Seleciona o elemento HTML com a classe 'container-card'
+  const containerCard = document.querySelector('.container-card');
+  // Define o conteúdo HTML do contêiner como vazio, removendo todos os elementos filhos
+  containerCard.innerHTML = '';
 }
 
-// Chama a função para criar e exibir os cards dos campeões no DOM
+// Atualize a função para filtrar os campeões com base na categoria
+function filtrarCampeoesPorCategoria(categoria) {
+  // Filtra os campeões usando a função funcaoDosCampeoes e a categoria fornecida
+  const campeoesFiltrados = funcaoDosCampeoes(data.data, categoria);
+  // Limpa o contêiner de cards antes de adicionar os novos cards filtrados
+  clearContainer();
+  // Cria os cards para os campeões filtrados e adiciona ao contêiner
+  createChampionCards({ data: campeoesFiltrados });
+}
+
+// Adicione ouvintes de evento aos links de categoria
+const linksDeCategoria = document.querySelectorAll('.categoria-botao');
+linksDeCategoria.forEach(link => {
+  // Adiciona um ouvinte de clique para cada link de categoria
+  link.addEventListener('click', function (event) {
+    event.preventDefault(); // Evita o comportamento padrão de redirecionamento
+    // Obtém a categoria selecionada a partir do atributo 'data-categoria' do link
+    const categoriaSelecionada = this.getAttribute('data-categoria');
+    // Filtra e exibe os campeões correspondentes à categoria selecionada
+    filtrarCampeoesPorCategoria(categoriaSelecionada);
+  });
+});
+
+// Criação inicial dos cards de campeões
 createChampionCards(data);

@@ -1,9 +1,5 @@
-// estas funciones son de ejemplo
-//tá funcionando
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
+// Função para filtrar os campeões com base na categoria
+export const funcaoDosCampeoes = (dados, tipo) => {
+  const campeoesArray = Object.values(dados); // Transforma o objeto de campeões em um array
+  return campeoesArray.filter(campeao => campeao.tags.includes(tipo));
 };
