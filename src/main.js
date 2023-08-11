@@ -101,51 +101,22 @@ categoryLinks.forEach(link => {
 
 });
 
-// Atualiza a função para filtrar os campeões com base na categoria e na ordenação
-function filterChampionCategoryAndSort(category, sortOrder) {
-  const filteredChampions = championsFuction(data.data, category);
-  const sortedChampions = sortChampionsAlphabetically(filteredChampions, sortOrder);
-
-  clearContainer();
-  createChampionCards({ data: sortedChampions });
-}
-
-// Atualize o ouvinte de eventos para os links de categoria e ordenação
-categoryLinks.forEach(link => {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-    const selectCategory = this.getAttribute('data-category').toUpperCase();
-    const sortOrder = document.querySelector('.order-button.active').getAttribute('data-order');
-    filterChampionCategoryAndSort(selectCategory, sortOrder);
-  });
-});
-
+// Adicione ouvintes de evento aos links de ordenação
+const orderLinks = document.querySelectorAll('.order-button');
 orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {
     event.preventDefault();
     const sortOrder = this.getAttribute('data-order');
-    const activeCategory = document.querySelector('.category-button.active');
-    const selectCategory = activeCategory ? activeCategory.getAttribute('data-category').toUpperCase() : null;
-    filterChampionCategoryAndSort(selectCategory, sortOrder);
+    
+    // Chama a função de ordenação importada e passa o objeto data e a ordem
+    const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
+
+    // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
+    clearContainer();
+    // Cria os cards para os campeões ordenados e adiciona ao contêiner
+    createChampionCards({ data: sortedChampions });
   });
 });
-
-// // Adicione ouvintes de evento aos links de ordenação
-// const orderLinks = document.querySelectorAll('.order-button');
-// orderLinks.forEach(link => {
-//   link.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     const sortOrder = this.getAttribute('data-order');
-    
-//     // Chama a função de ordenação importada e passa o objeto data e a ordem
-//     const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
-
-//     // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
-//     clearContainer();
-//     // Cria os cards para os campeões ordenados e adiciona ao contêiner
-//     createChampionCards({ data: sortedChampions });
-//   });
-// });
 
 
 // Selecione o elemento do botão "Campeões"
