@@ -1,5 +1,5 @@
 import data from './data/lol/lol.js';
-import { funcaoDosCampeoes } from './data.js';
+import { championsFuction, sortChampionsAlphabetically  } from './data.js';
 
 // Função para criar e exibir os cards dos campeões no DOM
 function createChampionCards(champions) {
@@ -75,29 +75,49 @@ function clearContainer() {
   containerCard.innerHTML = '';
 }
 
-// Atualize a função para filtrar os campeões com base na categoria
-function filtrarCampeoesPorCategoria(categoria) {
+// Atualiza a função para filtrar os campeões com base na categoria
+function filterChampionCategory(category) {
   // Filtra os campeões usando a função funcaoDosCampeoes e a categoria fornecida
-  const campeoesFiltrados = funcaoDosCampeoes(data.data, categoria);
+  const filteredChampions = championsFuction(data.data, category);
   // Limpa o contêiner de cards antes de adicionar os novos cards filtrados
   clearContainer();
   // Cria os cards para os campeões filtrados e adiciona ao contêiner
-  createChampionCards({ data: campeoesFiltrados });
+  createChampionCards({ data: filteredChampions });
 }
 
 // Adicione ouvintes de evento aos links de categoria
-const linksDeCategoria = document.querySelectorAll('.categoria-botao');
-linksDeCategoria.forEach(link => {
+const categoryLinks = document.querySelectorAll('.category-button');
+categoryLinks.forEach(link => {
   // Adiciona um ouvinte de clique para cada link de categoria
   link.addEventListener('click', function (event) {
-    event.preventDefault(); // Evita o comportamento padrão de redirecionamento
+    // Evita o comportamento padrão de redirecionamento
+    event.preventDefault();
     // Obtém a categoria selecionada a partir do atributo 'data-categoria' do link
-    const categoriaSelecionada = this.getAttribute('data-categoria');
+    const selectCategory = this.getAttribute('data-category');
     // Filtra e exibe os campeões correspondentes à categoria selecionada
-    filtrarCampeoesPorCategoria(categoriaSelecionada);
+    filterChampionCategory(selectCategory);
+
+  });
+
+});
+
+// Adicione ouvintes de evento aos links de ordenação
+const orderLinks = document.querySelectorAll('.order-button');
+orderLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const sortOrder = this.getAttribute('data-order');
+    
+    // Chama a função de ordenação importada e passa o objeto data e a ordem
+    const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
+
+    // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
+    clearContainer();
+    // Cria os cards para os campeões ordenados e adiciona ao contêiner
+    createChampionCards({ data: sortedChampions });
   });
 });
-createChampionCards(data);
+
 
 // Selecione o elemento do botão "Campeões"
 const campeoesButton = document.querySelector('.nav-menu a');
@@ -107,5 +127,6 @@ campeoesButton.addEventListener('click', () => {
   // Recarregue a página
   location.reload();
 });
+
 // Criação inicial dos cards de campeões
 createChampionCards(data);

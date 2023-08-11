@@ -9,7 +9,7 @@
 }
 
 html {
-  background-image: url(imagens/desktop-1920x1080.jpg);
+  background-image: url(imagens/Arena.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -64,8 +64,9 @@ header {
 }
 
 .menu li {
-  margin-right: 20px;
-
+  margin-right: 30px;
+  margin-left: 30px;
+ 
 }
 
 .menu li a {
@@ -86,29 +87,35 @@ header {
 
 
 .sub-menu {
-
   display: none;
   list-style: none;
   position: absolute;
   background-color: rgba(19, 17, 17, 0.9);
   padding: 10px;
   z-index: 1;
-
 }
 
-.categorias:hover .sub-menu {
+.sub-menu-order {
+  display:none;
+  list-style: none;
+  position: absolute;
+  background-color: rgba(19, 17, 17, 0.9);
+  padding: 10px;
+  z-index: 1;
+}
+
+
+.nav-menu-categorias:hover .sub-menu {
   display: block;
-
 }
 
-.categorias .sub-menu:hover {
-  display: block;
-
-}
-
-.sub-menu.active {
+.nav-menu-championsOrder:hover .sub-menu-order{
   display: block;
 }
+
+/* .sub-menu.active {
+  display: block;
+} */
 
 /* estilos do main */
 

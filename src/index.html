@@ -18,24 +18,33 @@
 </head>
 
 <body>
+  <!-- Início do header -->
   <header>
     <nav class="nav-pai">
       <div class="container">
         <div class="logo">
-          <a href="#"><img src="./imagens/lol-logo.png" alt="Logo do site"></a>
+          <img src="./imagens/lol-logo.png" alt="Logo do site">
         </div>
 
         <ul class="menu">
           <li class="nav-menu"> <a href="#">Campeões</a></li>
-          <li class="nav-menu categorias"> 
+          <li class="nav-menu-championsOrder"> 
+            <a href= "#">Ordenar</a>
+            <ul class="sub-menu-order">
+              <li><a href="#" id="orderAZ" class="order-button" data-order="A/Z">A-Z</a></li>
+              <li><a href="#" id="orderZA" class="order-button" data-order="Z/A">Z-A</a></li>
+            </ul>
+        </li>
+          <li class="nav-menu-categorias">
             <a href="#">Categorias</a>
             <ul class="sub-menu">
-              <li><a href="#" class="categoria-botao" data-categoria="Assassin">Assassinos</a></li>
-              <li><a href="#" class="categoria-botao" data-categoria="Fighter">Lutadores</a></li>
-              <li><a href="#" class="categoria-botao" data-categoria="Mage">Magos</a></li>
-              <li><a href="#" class="categoria-botao" data-categoria="Marksman">Atiradores</a><li>
-              <li><a href="#" class="categoria-botao" data-categoria="Support">Suportes</a></li>
-              <li><a href="#" class="categoria-botao" data-categoria="Tank">Tanques</a></li>
+              <li><a href="#" class="category-button" data-category="Assassin">Assassinos</a></li>
+              <li><a href="#" class="category-button" data-category="Fighter">Lutadores</a></li>
+              <li><a href="#" class="category-button" data-category="Mage">Magos</a></li>
+              <li><a href="#" class="category-button" data-category="Marksman">Atiradores</a>
+              </li>
+              <li><a href="#" class="category-button" data-category="Support">Suportes</a></li>
+              <li><a href="#" class="category-button" data-category="Tank">Tanques</a></li>
             </ul>
           </li>
           <li class="nav-menu"><a href="#contato">Contato</a></li>
@@ -48,6 +57,7 @@
       </div>
     </nav>
   </header>
+  <!-- fim do header -->
   <h1>
     <span class="span-container">
       <span class="small-font">ESCOLHA SEU</span>
@@ -56,6 +66,8 @@
       <span class="big-font">CAMPEÃO</span>
     </span>
   </h1>
+
+  <!-- início da main -->
   <main>
 
     <section class="section-cards">
@@ -65,7 +77,15 @@
     </section>
 
   </main>
+  <!-- fim da main -->
+  
   <footer class="rodape" id="contato">
+    <!-- <button class="coh-button scroll-top-arrow js-scroll-top coh-ce-cpt_scroll_top_arrow-18142734 coh-js-scroll-to"
+      data-coh-scroll-to="body" data-coh-scroll-duration="-1" data-coh-scroll-offset="top" id="" data-analytics="[null]"
+      data-analytics-layer="[{&quot;trigger&quot;:&quot;click&quot;,&quot;key&quot;:&quot;category&quot;,&quot;value&quot;:&quot;Content&quot;},{&quot;trigger&quot;:&quot;click&quot;,&quot;key&quot;:&quot;action&quot;,&quot;value&quot;:&quot;Click&quot;},{&quot;trigger&quot;:&quot;click&quot;,&quot;key&quot;:&quot;label&quot;,&quot;value&quot;:&quot;Back to top&quot;},{&quot;trigger&quot;:&quot;click&quot;,&quot;value&quot;:&quot;Scroll Top Arrow&quot;,&quot;key&quot;:&quot;component&quot;}]"
+      data-coh-settings="{ }" type="button" style="display: block;"> <span
+        class="coh-inline-element ssa-instance-f40f30dd-9d4d-4f09-84b3-7d4ca0774992 coh-ce-cpt_scroll_top_arrow-97efcbe"></span>
+    </button> -->
     <div class="container-footer">
       <p> Desenvolvido por: </p>
       <p> Ádila Freitas: <a href="https://github.com/adilamarcelefreitas" target="_blank">GitHub</a> | <a
@@ -77,7 +97,7 @@
 
   </footer>
   <script src="main.js" type="module"></script>
-  
+
 </body>
 
 </html>
