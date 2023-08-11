@@ -1,5 +1,5 @@
 import data from './data/lol/lol.js';
-import { championsFuction, sortChampionsAlphabetically } from './data.js';
+import { championsFuction, sortChampionsAlphabetically  } from './data.js';
 
 // Função para criar e exibir os cards dos campeões no DOM
 function createChampionCards(champions) {
@@ -101,23 +101,61 @@ categoryLinks.forEach(link => {
 
 });
 
-// Adicione ouvintes de evento aos links de ordenação
-const orderLinks = document.querySelectorAll('.order-button');
+// Atualiza a função para filtrar os campeões com base na categoria e na ordenação
+function filterChampionCategoryAndSort(category, sortOrder) {
+  const filteredChampions = championsFuction(data.data, category);
+  const sortedChampions = sortChampionsAlphabetically(filteredChampions, sortOrder);
+
+  clearContainer();
+  createChampionCards({ data: sortedChampions });
+}
+
+// Atualize o ouvinte de eventos para os links de categoria e ordenação
+categoryLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const selectCategory = this.getAttribute('data-category').toUpperCase();
+    const sortOrder = document.querySelector('.order-button.active').getAttribute('data-order');
+    filterChampionCategoryAndSort(selectCategory, sortOrder);
+  });
+});
+
 orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {
     event.preventDefault();
     const sortOrder = this.getAttribute('data-order');
-    
-    // Chama a função de ordenação importada e passa o objeto data e a ordem
-    const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
-
-    // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
-    clearContainer();
-    // Cria os cards para os campeões ordenados e adiciona ao contêiner
-    createChampionCards({ data: sortedChampions });
+    const activeCategory = document.querySelector('.category-button.active');
+    const selectCategory = activeCategory ? activeCategory.getAttribute('data-category').toUpperCase() : null;
+    filterChampionCategoryAndSort(selectCategory, sortOrder);
   });
 });
 
+// // Adicione ouvintes de evento aos links de ordenação
+// const orderLinks = document.querySelectorAll('.order-button');
+// orderLinks.forEach(link => {
+//   link.addEventListener('click', function (event) {
+//     event.preventDefault();
+//     const sortOrder = this.getAttribute('data-order');
+    
+//     // Chama a função de ordenação importada e passa o objeto data e a ordem
+//     const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
+
+//     // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
+//     clearContainer();
+//     // Cria os cards para os campeões ordenados e adiciona ao contêiner
+//     createChampionCards({ data: sortedChampions });
+//   });
+// });
+
+
+// Selecione o elemento do botão "Campeões"
+const campeoesButton = document.querySelector('.nav-menu a');
+
+// Adicione um ouvinte de evento para o clique no botão "Campeões"
+campeoesButton.addEventListener('click', () => {
+  // Recarregue a página
+  location.reload();
+});
 
 // Criação inicial dos cards de campeões
 createChampionCards(data);
