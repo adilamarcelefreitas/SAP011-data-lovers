@@ -18,16 +18,24 @@
 </head>
 
 <body>
+  <!-- Início do header -->
   <header>
     <nav class="nav-pai">
       <div class="container">
         <div class="logo">
-          <a href="#"><img src="./imagens/lol-logo.png" alt="Logo do site"></a>
+          <img src="./imagens/lol-logo.png" alt="Logo do site">
         </div>
 
         <ul class="menu">
           <li class="nav-menu"> <a href="#">Campeões</a></li>
-          <li class="nav-menu categorias">
+          <li class="nav-menu-championsOrder"> 
+            <a href= "#">Ordenar</a>
+            <ul class="sub-menu-order">
+              <li><a href="#" id="orderAZ" class="order-button" data-order="A/Z">A-Z</a></li>
+              <li><a href="#" id="orderZA" class="order-button" data-order="Z/A">Z-A</a></li>
+            </ul>
+        </li>
+          <li class="nav-menu-categorias">
             <a href="#">Categorias</a>
             <ul class="sub-menu">
               <li><a href="#" class="category-button" data-category="Assassin">Assassinos</a></li>
@@ -49,6 +57,7 @@
       </div>
     </nav>
   </header>
+  <!-- fim do header -->
   <h1>
     <span class="span-container">
       <span class="small-font">ESCOLHA SEU</span>
@@ -57,6 +66,8 @@
       <span class="big-font">CAMPEÃO</span>
     </span>
   </h1>
+
+  <!-- início da main -->
   <main>
 
     <section class="section-cards">
@@ -66,6 +77,8 @@
     </section>
 
   </main>
+  <!-- fim da main -->
+  
   <footer class="rodape" id="contato">
     <!-- <button class="coh-button scroll-top-arrow js-scroll-top coh-ce-cpt_scroll_top_arrow-18142734 coh-js-scroll-to"
       data-coh-scroll-to="body" data-coh-scroll-duration="-1" data-coh-scroll-offset="top" id="" data-analytics="[null]"

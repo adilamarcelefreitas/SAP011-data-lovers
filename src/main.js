@@ -75,7 +75,7 @@ function clearContainer() {
   containerCard.innerHTML = '';
 }
 
-// Atualize a função para filtrar os campeões com base na categoria
+// Atualiza a função para filtrar os campeões com base na categoria
 function filterChampionCategory(category) {
   // Filtra os campeões usando a função funcaoDosCampeoes e a categoria fornecida
   const filteredChampions = championsFuction(data.data, category);
@@ -100,15 +100,47 @@ categoryLinks.forEach(link => {
   });
 
 });
-createChampionCards(data);
 
-// Selecione o elemento do botão "Campeões"
+
+// Seleciona o elemento do botão "Campeões"
 const championsButton = document.querySelector('.nav-menu a');
 
-// Adicione um ouvinte de evento para o clique no botão "Campeões"
+// Adiciona um ouvinte de evento para o clique no botão "Campeões"
 championsButton.addEventListener('click', () => {
-  // Recarregue a página
+  // Recarregua a página
   location.reload();
 });
+
+// Função para ordenar os campeões alfabeticamente
+function sortChampionsAlphabetically(order) {
+   // Obtém uma array com os valores (campeões) do objeto 'data'
+  const sortedChampions = Object.values(data.data).sort((a, b) => {
+    // Converte os nomes dos campeões para letras maiúsculas para uma comparação sem distinção entre maiúsculas e minúsculas
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    if (order === 'A/Z') {
+       // Compara os nomes e retorna o resultado da comparação para a função 'sort'
+      return nameA.localeCompare(nameB);// Ordena em ordem alfabética crescente
+    } else if (order === 'Z/A') {
+      // Compara os nomes de forma inversa e retorna o resultado da comparação para a função 'sort'
+      return nameB.localeCompare(nameA);// Ordena em ordem alfabética decrescente
+    }
+  });
+
+  clearContainer();
+  createChampionCards({ data: sortedChampions });
+}
+
+// Adicione ouvintes de evento aos links de ordenação
+const orderLinks = document.querySelectorAll('.order-button');
+orderLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const sortOrder = this.getAttribute('data-order');
+    sortChampionsAlphabetically(sortOrder);
+  });
+});
+
 // Criação inicial dos cards de campeões
 createChampionCards(data);

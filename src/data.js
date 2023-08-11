@@ -4,3 +4,9 @@ export const championsFuction = (dados, tipo) => {
   return campeoesArray.filter(campeao => campeao.tags.includes(tipo));
 
 };
+
+
+
+
+
+
