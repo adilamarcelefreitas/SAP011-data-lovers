@@ -5,8 +5,6 @@ export const championsFuction = (dados, tipo) => {
 
 };
 
-
-
 // Função para ordenar os campeões alfabeticamente
 export const sortChampionsAlphabetically = (champions, order) => {
   const sortedChampions = Object.values(champions).sort((a, b) => {

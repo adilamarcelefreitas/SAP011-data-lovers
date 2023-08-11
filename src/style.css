@@ -85,7 +85,7 @@ header {
 
 }
 
-
+/*
 .sub-menu {
   display: none;
   list-style: none;
@@ -105,17 +105,88 @@ header {
 }
 
 
+.sub-menu-assassins{
+  display:none;
+  list-style: none;
+  position: absolute;
+  z-index: 0;
+
+}
+
+
 .nav-menu-categorias:hover .sub-menu {
   display: block;
 }
 
-.nav-menu-championsOrder:hover .sub-menu-order{
+.nav-menu-championsOrder:hover .sub-menu-order {
   display: block;
 }
 
-/* .sub-menu.active {
-  display: block;
+.nav-menu-categorias:hover .sub-menu .sub-menu-assassins{
+  display:block;
 } */
+
+.sub-menu,
+.sub-menu-order {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: rgba(19, 17, 17, 0.9);
+  padding: 10px;
+  z-index: 1;
+}
+
+.nav-menu-categorias:hover .sub-menu,
+.sub-menu:hover .sub-submenu-assassins,
+.sub-submenu-fighter, 
+.nav-menu-championsOrder:hover .sub-menu-order {
+  display: block;
+}
+
+.sub-submenu-assassins{ 
+  display: none;
+  list-style: none;
+  position: relative;
+  background-color: rgba(19, 17, 17, 0.9);
+  padding: 10px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.sub-submenu-fighter{ 
+  display: none;
+  list-style: none;
+  position: relative;
+  background-color: rgba(19, 17, 17, 0.9);
+  padding: 10px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+.sub-submenu-mage{ 
+  display: none;
+  list-style: none;
+  position: relative;
+  background-color: rgba(19, 17, 17, 0.9);
+  padding: 10px;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+
+
+/* .sub-menu-assassins-trigger:hover,
+.sub-menu-fighter-trigger:hover  {
+  display: block;
+}
+
+.sub-submenu-assassins:hover,
+.sub-submenu-fighter:hover {
+  display: block; 
+} */
+
 
 /* estilos do main */
 

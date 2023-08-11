@@ -28,25 +28,50 @@
 
         <ul class="menu">
           <li class="nav-menu"> <a href="#">Campeões</a></li>
-          <li class="nav-menu-championsOrder"> 
-            <a href= "#">Ordenar</a>
+          <li class="nav-menu-championsOrder">
+            <a href="#">Ordenar</a>
             <ul class="sub-menu-order">
               <li><a href="#" id="orderAZ" class="order-button" data-order="A/Z">A-Z</a></li>
               <li><a href="#" id="orderZA" class="order-button" data-order="Z/A">Z-A</a></li>
             </ul>
-        </li>
+          </li>
           <li class="nav-menu-categorias">
             <a href="#">Categorias</a>
             <ul class="sub-menu">
-              <li><a href="#" class="category-button" data-category="Assassin">Assassinos</a></li>
-              <li><a href="#" class="category-button" data-category="Fighter">Lutadores</a></li>
-              <li><a href="#" class="category-button" data-category="Mage">Magos</a></li>
+              <!-- submenu de filtração alfabética assassinos -->
+              <li class="sub-menu-assassins-trigger">
+                <a href="#" class="category-button" data-category="Assassin">Assassinos</a>
+                <ul class="sub-submenu-assassins">
+                  <li><a href="#" class="alphabetical-filter" data-category="Assassin" data-order="A/Z">A-Z</a></li>
+                  <li><a href="#" class="alphabetical-filter" data-category="Assassin" data-order="Z/A">Z-A</a></li>
+                </ul>
+              </li>
+
+              <!-- submenu de filtração alfabética lutadores -->
+              <li class="sub-menu-fighter-trigger">
+                <a href="#" class="category-button" data-category="Fighter">Lutadores</a>
+                <ul class="sub-submenu-fighter">
+                  <li><a href="#" class="alphabetical-filter" data-category="Fighter" data-order="A/Z">A-Z</a></li>
+                  <li><a href="#" class="alphabetical-filter" data-category="Fighter" data-order="Z/A">Z-A</a></li>
+                </ul>
+              </li>
+
+              <!-- submenu de filtração alfabética magos -->
+              <li class="sub-menu-mage-trigger">
+                <a href="#" class="category-button" data-category="Mage">Magos</a>
+                <ul class="sub-submenu-mage">
+                  <li><a href="#" class="alphabetical-filter" data-category="Mage" data-order="A/Z">A-Z</a></li>
+                  <li><a href="#" class="alphabetical-filter" data-category="Mage" data-order="Z/A">Z-A</a></li>
+                </ul>
+              </li>
+      
               <li><a href="#" class="category-button" data-category="Marksman">Atiradores</a>
               </li>
               <li><a href="#" class="category-button" data-category="Support">Suportes</a></li>
               <li><a href="#" class="category-button" data-category="Tank">Tanques</a></li>
             </ul>
           </li>
+          
           <li class="nav-menu"><a href="#contato">Contato</a></li>
         </ul>
 
@@ -78,7 +103,7 @@
 
   </main>
   <!-- fim da main -->
-  
+
   <footer class="rodape" id="contato">
     <!-- <button class="coh-button scroll-top-arrow js-scroll-top coh-ce-cpt_scroll_top_arrow-18142734 coh-js-scroll-to"
       data-coh-scroll-to="body" data-coh-scroll-duration="-1" data-coh-scroll-offset="top" id="" data-analytics="[null]"
