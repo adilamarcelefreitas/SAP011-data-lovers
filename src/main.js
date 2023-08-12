@@ -1,4 +1,5 @@
 import data from './data/lol/lol.js';
+// function setupSubmenuToggle(submenuElement) {
 import { championsFuction, sortChampionsAlphabetically } from './data.js';
 
 // Função de exibir os cards dos campeões 
@@ -101,7 +102,7 @@ categoryLinks.forEach(link => {
 
 });
 
-// Adicione ouvintes de evento aos links de ordenação
+// Adicione ouvintes de evento aos links de ordenação de A-Z/Z-A
 const orderLinks = document.querySelectorAll('.order-button');
 orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -119,7 +120,7 @@ orderLinks.forEach(link => {
 });
 
 
-// Adicione ouvintes de evento aos links de filtragem alfabética
+// Adicione ouvintes de evento aos links de filtragem alfabética das acategorias
 const alphabeticalFilterLinks = document.querySelectorAll('.alphabetical-filter');
 alphabeticalFilterLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -140,24 +141,6 @@ alphabeticalFilterLinks.forEach(link => {
     createChampionCards({ data: sortedChampions });
   });
 });
-
-//ação de mostrar e sumir ao passar o mouse sobre os sub-menus
-function setupSubmenuToggle(submenuElement) {
-  const submenu = document.querySelector(submenuElement);
-
-  submenu.addEventListener('mouseenter', () => {
-    submenu.style.display = 'block';
-  });
-
-  submenu.addEventListener('mouseleave', () => {
-    submenu.style.display = 'none';
-  });
-}
-
-setupSubmenuToggle('.sub-submenu-assassins');
-setupSubmenuToggle('.sub-submenu-fighter');
-setupSubmenuToggle('.sub-submenu-mage');
-
 
 
 // Selecione o elemento do botão "Campeões"

@@ -20,3 +20,4 @@ export const sortChampionsAlphabetically = (champions, order) => {
 
   return sortedChampions;
 }
+
