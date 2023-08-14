@@ -27,31 +27,34 @@ header {
   width: 100%;
 }
 
+/* início da barra de pesquisa */
 .search-container {
   position: relative;
-  padding: 10px;
+  padding: 12px;
   left: 10%; 
   border-radius: 50px;
-  height: 50px;
+  height: 45px;
   align-items: center;
   display: flex;
   justify-content: space-between;
   background-color: rgba(19, 17, 17);
 }
 
-.search-container:hover > #search-input{
+.search-container:hover > .search-input{
   width: 200px;
+  padding-left: 20px;
 }
 
-#search-input {
+.search-input {
   position: relative;
   background: none;
   width: 0;
   outline: 0;
+  padding: 0;
+  border: 0;
   top: 0;
   justify-content: center;
-  border: 0;
-  /* padding: 15px; */
+  transition: 0.8s;
   border-radius: 60px;
   font-size: 15px;
   color: white;
@@ -60,14 +63,16 @@ header {
 .search-btn{
   align-items: center;
   border-radius: 50%;
+  cursor: pointer;
 
 }
+
+/* fim da barra de pesquisa */
 
 .nav-pai {
   width: 100%;
   display: flex;
 }
-
 
 .container {
   display: flex;
@@ -169,10 +174,9 @@ main {
 .percentualCategories {
   text-align: center;
   font-family:'Roboto', sans-serif;
+  font-weight: bold;
   font-size: 15px;
   text-transform: uppercase;
-
-  
 }
 
 .content {
@@ -180,14 +184,14 @@ main {
   padding: 20px;
 }
 
-.botao-jogue-agora button {
+.play-btn button {
   font-size: 20px;
   font-family: Impact, fantasy;
   text-transform: uppercase;
   width: 150px;
   color: rgb(248, 248, 248);
   cursor: pointer;
-  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(11, 196, 226, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(11, 196, 226, 1) 35%, rgb(95, 206, 231) 100%);
   border-radius: 20px;
   
 }
@@ -232,22 +236,15 @@ h1 {
   margin: 30px;
   display: flex;
   flex-direction: column;
-  /* Adiciona flex-direction: column para o posicionamento vertical */
   align-items: center;
-  /* Centraliza horizontalmente */
   text-align: center;
-  /* Centraliza o texto horizontalmente */
   border: 0px 0px 10px rgba(245, 245, 247, 0.5);
   padding: 10px;
-  /* Adiciona um padding para dar espaço entre o texto e o card */
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.6);
-  /* Define a cor de fundo para o card */
   position: relative;
-  /* Define a posição como relativa para que o corte funcione corretamente */
   overflow: hidden;
-  /* transform-style: preserve-3d;  */
-  transition: transform 0.3s;
+  transition: transform 0.5s;
 }
 
 .champion-card::after {
@@ -264,7 +261,7 @@ h1 {
   border-color: rgb(27, 26, 26, 0.8);
   /* Cor do triângulo */
   clip-path: polygon(100% 0, 100% 100%, 0 0);
-  /* Define o polígono para recortar o canto */
+  /* Define o tamanho para recortar o canto */
 }
 
 
@@ -279,13 +276,9 @@ h1 {
   font-family: "Beaufort for LOL Bold";
   text-transform: uppercase;
   font-size: 25px;
-  /* Reduz o tamanho da fonte para que caiba melhor no card */
   color: white;
-  /* Define a cor do texto do h3 como branco */
   margin-top: 0;
-  /* Remove o margin-top para que o h3 fique colado no topo do card */
   padding: 10px;
-  /* Adiciona um padding para dar espaço entre o texto e o background */
   border-radius: 20px;
 }
 
@@ -297,7 +290,8 @@ h1 {
   height: 100%;
   text-transform: uppercase;
   font-family: "Beaufort for LOL Bold";
-  font-size: 20px;
+  font-size: 25px;
+  line-height: 9px;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -308,6 +302,7 @@ h1 {
   border-radius: 20px;
   z-index: 1;
 }
+
 
 .champion-card.flipped {
   transform: rotateY(180deg);
@@ -347,11 +342,11 @@ h1 {
   line-height: 35px;
   font-size: 24px;
   cursor: pointer;
-  display: none; /* Começa oculto */
+  display: none;
 }
 
 
-.rodape {
+.footer-info {
   background-color: rgba(19, 17, 17, 0.9);
   font-size: 15px;
   font-family: 'Roboto', sans-serif;

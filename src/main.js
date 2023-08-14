@@ -86,7 +86,7 @@ function clearContainer() {
 }
 
 // Obtém a referência para a barra de pesquisa
-const searchInput = document.querySelector('#search-input');
+const searchInput = document.querySelector('.search-input');
 
 // Atualiza a função para filtrar os campeões com base no nome
 function filterChampionsByNameInput(searchText) {
