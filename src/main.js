@@ -1,6 +1,9 @@
 import data from './data/lol/lol.js';
-// function setupSubmenuToggle(submenuElement) {
 import { championsFuction, sortChampionsAlphabetically, calculateCategoryPercentages } from './data.js';
+import { filterChampionsByName } from './data.js';
+
+
+
 
 // Função de exibir os cards dos campeões 
 function createChampionCards(champions) {
@@ -49,8 +52,6 @@ function createChampionCards(champions) {
     attack.textContent = `Ataque: ${champion.info.attack}`;
 
     // Cálculo do percentual da categoria (você pode ajustar o índice [0] conforme necessário)
-    const categoryPercentages = calculateCategoryPercentages(champions.data);
-    const categoryPercentage = categoryPercentages[champion.tags[0]];
     const categoryPercentageElement = document.createElement('p');
     // categoryPercentageElement.textContent = `Percentual: ${categoryPercentage.toFixed(2)}%`;
 
@@ -84,6 +85,26 @@ function clearContainer() {
   containerCard.innerHTML = '';
 }
 
+// Obtém a referência para a barra de pesquisa
+const searchInput = document.querySelector('#search-input');
+
+// Atualiza a função para filtrar os campeões com base no nome
+function filterChampionsByNameInput(searchText) {
+  const filteredChampions = filterChampionsByName(data.data, searchText);
+  clearContainer();
+  createChampionCards({ data: filteredChampions });
+}
+
+// Adiciona um ouvinte de evento à barra de pesquisa
+searchInput.addEventListener('input', event => {
+  const searchText = event.target.value;
+  filterChampionsByNameInput(searchText);
+});
+
+// Criação inicial dos cards de campeões
+createChampionCards(data);
+// Seleciona os elementos do HTML
+
 // Atualiza a função para filtrar os campeões com base na categoria
 function filterChampionCategory(category) {
   // Filtra os campeões usando a função funcaoDosCampeoes e a categoria fornecida
@@ -93,6 +114,7 @@ function filterChampionCategory(category) {
   // Cria os cards para os campeões filtrados e adiciona ao contêiner
   createChampionCards({ data: filteredChampions });
 }
+
 
 // Obtém a referência para a seta
 const scrollToTopButton = document.querySelector('.scroll-to-top');
@@ -113,12 +135,12 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Adicione um ouvinte de evento para clicar na seta
+// Adiciona um ouvinte de evento para clicar na seta
 scrollToTopButton.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' }); // Role suavemente de volta ao topo
 });
 
-// Adicione ouvintes de evento aos links de categoria
+// Adiciona ouvintes de evento aos links de categoria
 const categoryLinks = document.querySelectorAll('.category-button');
 categoryLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -138,7 +160,7 @@ categoryLinks.forEach(link => {
   });
 });
 
-// Adicione ouvintes de evento aos links de ordenação de A-Z/Z-A
+// Adiciona ouvintes de evento aos links de ordenação de A-Z/Z-A
 const orderLinks = document.querySelectorAll('.order-button');
 orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {

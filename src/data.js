@@ -45,3 +45,12 @@ export const calculateCategoryPercentages = (champions) => {
 
   return categoryPercentages; // Retorna o objeto com os percentuais de cada categoria
 };
+
+
+// Função para filtrar campeões por nome
+export const filterChampionsByName = (champions, searchText) => {
+  searchText = searchText.trim().toLowerCase();
+  return Object.values(champions).filter(campeao =>
+    campeao.name.toLowerCase().includes(searchText)
+  );
+};
