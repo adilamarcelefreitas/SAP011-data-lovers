@@ -94,6 +94,30 @@ function filterChampionCategory(category) {
   createChampionCards({ data: filteredChampions });
 }
 
+// Obtém a referência para a seta
+const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+// Define uma função para mostrar ou ocultar a seta
+function toggleScrollToTopButton(show) {
+  scrollToTopButton.style.display = show ? 'block' : 'none';
+}
+
+// Adiciona um ouvinte de evento ao fazer a rolagem da página
+window.addEventListener('scroll', () => {
+  const thirdRowOffset = window.innerHeight * 2; // Altura da terceira fileira
+
+  if (window.scrollY >= thirdRowOffset) {
+    toggleScrollToTopButton(true); // Mostra a seta quando rolar até a terceira fileira
+  } else {
+    toggleScrollToTopButton(false); // Oculta a seta caso contrário
+  }
+});
+
+// Adicione um ouvinte de evento para clicar na seta
+scrollToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // Role suavemente de volta ao topo
+});
+
 // Adicione ouvintes de evento aos links de categoria
 const categoryLinks = document.querySelectorAll('.category-button');
 categoryLinks.forEach(link => {

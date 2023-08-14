@@ -45,8 +45,8 @@ header {
 }
 
 .logo img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   align-items: left;
 }
 
@@ -260,7 +260,7 @@ h1 {
   height: 100%;
   text-transform: uppercase;
   font-family: "Beaufort for LOL Bold";
-  font-size: 25px;
+  font-size: 20px;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -297,6 +297,22 @@ h1 {
   padding: 0;
   flex-direction: column;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color:rgb(107, 103, 103);
+  border-radius: 25px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Começa oculto */
+}
+
 
 .rodape {
   background-color: rgba(19, 17, 17, 0.9);
