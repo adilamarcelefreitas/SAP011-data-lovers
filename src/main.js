@@ -1,6 +1,6 @@
 import data from './data/lol/lol.js';
 // function setupSubmenuToggle(submenuElement) {
-import { championsFuction, sortChampionsAlphabetically } from './data.js';
+import { championsFuction, sortChampionsAlphabetically, calculateCategoryPercentages } from './data.js';
 
 // Função de exibir os cards dos campeões 
 function createChampionCards(champions) {
@@ -48,16 +48,23 @@ function createChampionCards(champions) {
     const attack = document.createElement('p');
     attack.textContent = `Ataque: ${champion.info.attack}`;
 
-    //flipper do card - rotação
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
-    });
+    // Cálculo do percentual da categoria (você pode ajustar o índice [0] conforme necessário)
+    const categoryPercentages = calculateCategoryPercentages(champions.data);
+    const categoryPercentage = categoryPercentages[champion.tags[0]];
+    const categoryPercentageElement = document.createElement('p');
+    categoryPercentageElement.textContent = `Percentual: ${categoryPercentage.toFixed(2)}%`;
 
     // Anexa as informações à parte de trás do card
     cardBack.appendChild(defense);
     cardBack.appendChild(magic);
     cardBack.appendChild(difficulty);
     cardBack.appendChild(attack);
+    cardBack.appendChild(categoryPercentageElement); // Inclui o percentual da categoria
+
+    //flipper do card - rotação
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
+    });
 
     // Anexa as partes frontal e traseira do card ao card do campeão
     card.appendChild(cardFront);
@@ -65,6 +72,7 @@ function createChampionCards(champions) {
 
     // Anexa o card do campeão ao container de cards
     containerCard.appendChild(card);
+
   }
 }
 
@@ -89,17 +97,21 @@ function filterChampionCategory(category) {
 // Adicione ouvintes de evento aos links de categoria
 const categoryLinks = document.querySelectorAll('.category-button');
 categoryLinks.forEach(link => {
-  // Adiciona um ouvinte de clique para cada link de categoria
   link.addEventListener('click', function (event) {
-    // Evita o comportamento padrão de redirecionamento
     event.preventDefault();
-    // Obtém a categoria selecionada a partir do atributo 'data-categoria' do link
     const selectCategory = this.getAttribute('data-category');
+
     // Filtra e exibe os campeões correspondentes à categoria selecionada
     filterChampionCategory(selectCategory);
 
-  });
+    // Calcula o percentual da categoria selecionada
+    const categoryPercentages = calculateCategoryPercentages(data.data);
+    const categoryPercentage = categoryPercentages[selectCategory];
 
+    // Atualiza o elemento HTML para exibir o percentual
+    const categoryPercentageElement = document.querySelector('.percentualCategories h2');
+    categoryPercentageElement.textContent = `Percentual da categoria ${selectCategory}: ${categoryPercentage.toFixed(2)}%`;
+  });
 });
 
 // Adicione ouvintes de evento aos links de ordenação de A-Z/Z-A
@@ -108,7 +120,7 @@ orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {
     event.preventDefault();
     const sortOrder = this.getAttribute('data-order');
-    
+
     // Chama a função de ordenação importada e passa o objeto data e a ordem
     const sortedChampions = sortChampionsAlphabetically(data.data, sortOrder);
 
@@ -120,7 +132,7 @@ orderLinks.forEach(link => {
 });
 
 
-// Adicione ouvintes de evento aos links de filtragem alfabética das acategorias
+// Adiciona ouvintes de evento aos links de filtragem alfabética das acategorias
 const alphabeticalFilterLinks = document.querySelectorAll('.alphabetical-filter');
 alphabeticalFilterLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -136,7 +148,7 @@ alphabeticalFilterLinks.forEach(link => {
 
     // Limpa o contêiner de cards antes de adicionar os novos cards
     clearContainer();
-    
+
     // Cria os cards para os campeões filtrados e ordenados e adiciona ao contêiner
     createChampionCards({ data: sortedChampions });
   });

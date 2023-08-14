@@ -20,3 +20,28 @@ export const sortChampionsAlphabetically = (champions, order) => {
 
   return sortedChampions;
 }
+
+// Função que calcula o percentual de campeões por categoria
+export const calculateCategoryPercentages = (champions) => {
+  const categoryCounts = {}; // Objeto para contar quantos campeões em cada categoria
+  const totalChampions = Object.values(champions).length; // Total de campeões
+
+  // Loop pelos campeões para contar suas categorias
+  for (const champion of Object.values(champions)) {
+    // Loop pelas categorias do campeão
+    for (const category of champion.tags) {
+      // Incrementa a contagem da categoria ou define como 1 se for a primeira vez
+      categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    }
+  }
+
+  const categoryPercentages = {}; // Objeto para armazenar os percentuais
+
+  // Calcula o percentual de campeões em cada categoria
+  for (const category in categoryCounts) {
+    // Calcula o percentual e armazena no objeto categoryPercentages
+    categoryPercentages[category] = (categoryCounts[category] / totalChampions) * 100;
+  }
+
+  return categoryPercentages; // Retorna o objeto com os percentuais de cada categoria
+};
