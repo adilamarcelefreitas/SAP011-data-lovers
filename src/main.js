@@ -1,7 +1,8 @@
 import data from './data/lol/lol.js';
-import { championsFuction, sortChampionsAlphabetically  } from './data.js';
+// function setupSubmenuToggle(submenuElement) {
+import { championsFuction, sortChampionsAlphabetically } from './data.js';
 
-// Função para criar e exibir os cards dos campeões no DOM
+// Função de exibir os cards dos campeões 
 function createChampionCards(champions) {
   const containerCard = document.querySelector('.container-card');
   containerCard.innerHTML = ''; // Limpa o contêiner antes de adicionar os novos cards
@@ -9,7 +10,7 @@ function createChampionCards(champions) {
   for (const championKey in champions.data) {
     const champion = champions.data[championKey];
 
-    // Crie um card para o campeão
+    // Cria um card para o campeão
     const card = document.createElement('div');
     card.classList.add('champion-card');
 
@@ -17,24 +18,24 @@ function createChampionCards(champions) {
     const cardFront = document.createElement('div');
     cardFront.classList.add('card-front');
 
-    // Crie uma imagem para a parte frontal do card
+    // Cria uma imagem para a parte frontal do card
     const img = document.createElement('img');
     img.src = champion.img; // Usando o link da imagem fornecido no objeto 'champion'
     img.alt = champion.name;
 
-    // Crie um elemento de nome para a parte frontal do card
+    // Cria um elemento de nome para a parte frontal do card
     const name = document.createElement('h3');
     name.textContent = champion.name;
 
-    // Anexe a imagem e o nome à parte frontal do card
+    // Anexa a imagem e o nome à parte frontal do card
     cardFront.appendChild(img);
     cardFront.appendChild(name);
 
-    // Parte de trás do card (informações)
+    // Parte de trás do card 
     const cardBack = document.createElement('div');
     cardBack.classList.add('card-back');
 
-    // Crie elementos para as informações de defesa, magia, dificuldade e ataque
+    // Cria elementos para as informações de defesa, magia, dificuldade e ataque
     const defense = document.createElement('p');
     defense.textContent = `Defesa: ${champion.info.defense}`;
 
@@ -47,22 +48,22 @@ function createChampionCards(champions) {
     const attack = document.createElement('p');
     attack.textContent = `Ataque: ${champion.info.attack}`;
 
-    //'flipper' do card
+    //flipper do card - rotação
     card.addEventListener('click', () => {
       card.classList.toggle('flipped'); // Alternar a classe 'flipped' no card
     });
 
-    // Anexe as informações à parte de trás do card
+    // Anexa as informações à parte de trás do card
     cardBack.appendChild(defense);
     cardBack.appendChild(magic);
     cardBack.appendChild(difficulty);
     cardBack.appendChild(attack);
 
-    // Anexe as partes frontal e traseira do card ao card do campeão
+    // Anexa as partes frontal e traseira do card ao card do campeão
     card.appendChild(cardFront);
     card.appendChild(cardBack);
 
-    // Anexe o card do campeão ao container de cards
+    // Anexa o card do campeão ao container de cards
     containerCard.appendChild(card);
   }
 }
@@ -101,7 +102,7 @@ categoryLinks.forEach(link => {
 
 });
 
-// Adicione ouvintes de evento aos links de ordenação
+// Adicione ouvintes de evento aos links de ordenação de A-Z/Z-A
 const orderLinks = document.querySelectorAll('.order-button');
 orderLinks.forEach(link => {
   link.addEventListener('click', function (event) {
@@ -114,6 +115,29 @@ orderLinks.forEach(link => {
     // Limpa o contêiner de cards antes de adicionar os novos cards ordenados
     clearContainer();
     // Cria os cards para os campeões ordenados e adiciona ao contêiner
+    createChampionCards({ data: sortedChampions });
+  });
+});
+
+
+// Adicione ouvintes de evento aos links de filtragem alfabética das acategorias
+const alphabeticalFilterLinks = document.querySelectorAll('.alphabetical-filter');
+alphabeticalFilterLinks.forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const selectedCategory = this.getAttribute('data-category');
+    const sortOrder = this.getAttribute('data-order');
+
+    // Filtra os campeões com base na categoria selecionada
+    const filteredChampions = championsFuction(data.data, selectedCategory);
+
+    // Ordena os campeões filtrados alfabeticamente
+    const sortedChampions = sortChampionsAlphabetically(filteredChampions, sortOrder);
+
+    // Limpa o contêiner de cards antes de adicionar os novos cards
+    clearContainer();
+    
+    // Cria os cards para os campeões filtrados e ordenados e adiciona ao contêiner
     createChampionCards({ data: sortedChampions });
   });
 });
