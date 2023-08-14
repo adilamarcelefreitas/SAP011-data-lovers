@@ -52,7 +52,7 @@ function createChampionCards(champions) {
     const categoryPercentages = calculateCategoryPercentages(champions.data);
     const categoryPercentage = categoryPercentages[champion.tags[0]];
     const categoryPercentageElement = document.createElement('p');
-    categoryPercentageElement.textContent = `Percentual: ${categoryPercentage.toFixed(2)}%`;
+    // categoryPercentageElement.textContent = `Percentual: ${categoryPercentage.toFixed(2)}%`;
 
     // Anexa as informações à parte de trás do card
     cardBack.appendChild(defense);
