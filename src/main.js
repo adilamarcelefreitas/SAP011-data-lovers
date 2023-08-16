@@ -40,16 +40,16 @@ function createChampionCards(champions) {
 
     // Cria elementos para as informações de defesa, magia, dificuldade e ataque
     const defense = document.createElement('p');
-    defense.textContent = `Defesa: ${champion.info.defense}`;
-
+    defense.innerHTML = `<img src="./imagens/escudo.svg" id=shield> Defesa: ${champion.info.defense}`;
+    
     const magic = document.createElement('p');
-    magic.textContent = `Magia: ${champion.info.magic}`;
-
-    const difficulty = document.createElement('p');
-    difficulty.textContent = `Dificuldade: ${champion.info.difficulty}`;
+    magic.innerHTML = `<img src="./imagens/poção.svg" id=portion> Magia: ${champion.info.magic}`;
 
     const attack = document.createElement('p');
-    attack.textContent = `Ataque: ${champion.info.attack}`;
+    attack.innerHTML = `<img src="./imagens/ataque.svg" id=attack>Ataque: ${champion.info.attack}`;
+    
+    const difficulty = document.createElement('p');
+    difficulty.innerHTML = `<img src="./imagens/dificuldade.svg" id=difficulty> Dificuldade: ${champion.info.difficulty}`;
 
     // Cálculo do percentual da categoria (você pode ajustar o índice [0] conforme necessário)
     const categoryPercentageElement = document.createElement('p');
@@ -58,8 +58,8 @@ function createChampionCards(champions) {
     // Anexa as informações à parte de trás do card
     cardBack.appendChild(defense);
     cardBack.appendChild(magic);
-    cardBack.appendChild(difficulty);
     cardBack.appendChild(attack);
+    cardBack.appendChild(difficulty);
     cardBack.appendChild(categoryPercentageElement); // Inclui o percentual da categoria
 
     //flipper do card - rotação
