@@ -8,6 +8,7 @@
 }
 
 html {
+  /* display: flex; */
   background-image: url(imagens/Arena.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -25,6 +26,12 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+/* menu hamburguer */
+
+i#hamburguer{
+  display: none;
 }
 
 /* início da barra de pesquisa */
@@ -85,6 +92,7 @@ header {
 }
 
 .logo img {
+  display: flex;
   width: 80px;
   height: 80px;
   align-items: left;
@@ -95,6 +103,11 @@ header {
   display: flex;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+}
+
+/* Oculta o menu em telas pequenas */
+.menu.hide {
+  display: none;
 }
 
 .menu li {
@@ -231,8 +244,10 @@ h1 {
 }
 
 .champion-card {
-  flex: 0 1 calc(22% - 20px);
+  /* flex: 0 1 calc(22% - 20px); */
   /* 4 cartões em uma linha com espaçamento de 20px */
+  width: 20vw;
+  height: 55vh;;
   margin: 30px;
   display: flex;
   flex-direction: column;
@@ -290,8 +305,7 @@ h1 {
   height: 100%;
   text-transform: uppercase;
   font-family: "Beaufort for LOL Bold";
-  font-size: 24px;
-  line-height: 0;
+  font-size: 20px;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -303,11 +317,12 @@ h1 {
   z-index: 1;
 }
 
-
-#attack{
-  width: 50px;
-  height: 50px;
+.card-back div{
+  display: flex;
+  align-items: center;
+  line-height: 15px;
 }
+
 
 .champion-card.flipped {
   transform: rotateY(180deg);
@@ -365,9 +380,35 @@ h1 {
 
 @media screen and (max-width: 768px) {
 
-  .container {
+
+  html{
+    background-color: auto;
+  }
+
+
+  i#hamburguer{
+    /* background-color: */
+    font-size: 45px;;
+    width: 150vW;
+    text-align: center;
+    display:block;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+.container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .menu li {
+    margin: 10px 0;
   }
 
   .logo img {
@@ -378,4 +419,6 @@ h1 {
     flex: 0 1 calc(50% - 20px);
     /* 2 cartões em uma linha com espaçamento de 20px */
   }
+
+
 }

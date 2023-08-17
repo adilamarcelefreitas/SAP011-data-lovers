@@ -39,17 +39,17 @@ function createChampionCards(champions) {
     cardBack.classList.add('card-back');
 
     // Cria elementos para as informações de defesa, magia, dificuldade e ataque
-    const defense = document.createElement('p');
-    defense.innerHTML = `<img src="./imagens/escudo.svg" id=shield> Defesa: ${champion.info.defense}`;
+    const defense = document.createElement('div');
+    defense.innerHTML = `<img src="./imagens/escudo.svg" id=shield><p>Defesa: ${champion.info.defense}</p>`;
     
-    const magic = document.createElement('p');
-    magic.innerHTML = `<img src="./imagens/poção.svg" id=portion> Magia: ${champion.info.magic}`;
+    const magic = document.createElement('div');
+    magic.innerHTML = `<img src="./imagens/poção.svg" id=portion><p>Magia: ${champion.info.magic}</p>`;
 
-    const attack = document.createElement('p');
-    attack.innerHTML = `<img src="./imagens/ataque.svg" id=attack>Ataque: ${champion.info.attack}`;
+    const attack = document.createElement('div');
+    attack.innerHTML = `<img src="./imagens/ataque.svg" id=attack><p>Ataque: ${champion.info.attack}</p>`;
     
-    const difficulty = document.createElement('p');
-    difficulty.innerHTML = `<img src="./imagens/dificuldade.svg" id=difficulty> Dificuldade: ${champion.info.difficulty}`;
+    const difficulty = document.createElement('div');
+    difficulty.innerHTML = `<img src="./imagens/dificuldade.svg" id=difficulty><p>Dificuldade: ${champion.info.difficulty}</p>`;
 
     // Cálculo do percentual da categoria (você pode ajustar o índice [0] conforme necessário)
     const categoryPercentageElement = document.createElement('p');
