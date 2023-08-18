@@ -70,8 +70,10 @@ A interface do projeto foi cuidadosamente projetada com base nas sugestões dos 
 
 A aplicação foi desenvolvida com responsividade em mente, proporcionando uma experiência agradável em dispositivos de diferentes tamanhos de tela. A interface se adapta para garantir que os jogadores possam acessar as informações dos campeões independentemente do dispositivo utilizado.
 
-![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/fff96e10-e8f6-46fa-9668-41f365f8b454) ![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9)
 
+| ![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ba7fefd6-c988-4417-afa6-37374298a9fd) | ![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9) |
+
+|:---:|:---:|
 
 ## Seta de Retorno ⬆️
 
