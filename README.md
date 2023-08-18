@@ -53,9 +53,15 @@ A interface do projeto foi cuidadosamente projetada com base nas sugestões dos 
 
 [Tela Principal do Site - Cards Front]
 
+
+
 ![site_interface01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/67d4f325-7b74-4a55-957b-78dc42daffa8)
 
+
+
 [Tela Principal do Site - Cards Back]
+
+
 
 ![site_interface02](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/7a27f388-c4ad-42d8-a422-09059ca3ea7b)
 
@@ -64,9 +70,7 @@ A interface do projeto foi cuidadosamente projetada com base nas sugestões dos 
 
 A aplicação foi desenvolvida com responsividade em mente, proporcionando uma experiência agradável em dispositivos de diferentes tamanhos de tela. A interface se adapta para garantir que os jogadores possam acessar as informações dos campeões independentemente do dispositivo utilizado.
 
-![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/2ed115b2-3a52-4199-b6c5-3b4a91eb0bab)
-
-![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9)
+![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/fff96e10-e8f6-46fa-9668-41f365f8b454) ![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9)
 
 
 ## Seta de Retorno ⬆️
