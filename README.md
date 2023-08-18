@@ -51,8 +51,7 @@ Com base na pesquisa de campo e nos protótipos desenvolvidos, elaboramos histó
 
 A interface do projeto foi cuidadosamente projetada com base nas sugestões dos usuários obtidas na pesquisa de campo e nas histórias de usuários. A página inicial apresenta um menu de navegação com opções para buscar campeões por função, ordenar alfabeticamente e filtrar por categoria. Além disso, oferece links interativos para informações adicionais e para baixar o jogo.
 
-[Tela Principal do Site - Cards Front]
-<img src="imagens/site_interface01.png">
+![Tela Principal do Site - Cards Front](imagens/site_interface01.png)
 ![Tela Principal do Site - Cards Back ]
 <img src="imagens/site_interface02.png">
 
