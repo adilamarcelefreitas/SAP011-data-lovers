@@ -51,19 +51,25 @@ Com base na pesquisa de campo e nos protótipos desenvolvidos, elaboramos histó
 
 A interface do projeto foi cuidadosamente projetada com base nas sugestões dos usuários obtidas na pesquisa de campo e nas histórias de usuários. A página inicial apresenta um menu de navegação com opções para buscar campeões por função, ordenar alfabeticamente e filtrar por categoria. Além disso, oferece links interativos para informações adicionais e para baixar o jogo.
 
-![Tela Principal do Site](caminho-da-imagem.png)
-_(Insira uma descrição breve da imagem, se necessário)_
+![Tela Principal do Site - Cards Front](.imagens/site_interface01.png)
+![Tela Principal do Site - Cards Back ](.imagens/site_interface02.png)
+
 
 ## Responsividade 📱
 
 A aplicação foi desenvolvida com responsividade em mente, proporcionando uma experiência agradável em dispositivos de diferentes tamanhos de tela. A interface se adapta para garantir que os jogadores possam acessar as informações dos campeões independentemente do dispositivo utilizado.
 
-![Versão Responsiva do Site](caminho-da-imagem.png)
-_(Insira uma descrição breve da imagem, se necessário)_
+(.imagens/mobile01.jpg)
+(.imagens/mobile02.jpg)
+(.imagens/mobile03.jpg)
+(.imagens/mobile04.jpg)
+
 
 ## Seta de Retorno ⬆️
 
 Foi adicionada uma seta de retorno no site, que aparecerá quando o usuário estiver na terceira fileira de cards. Essa seta permite que o usuário retorne rapidamente ao início da página, melhorando a experiência de navegação.
+
+(.imagens/site_interface_seta.png)
 
 ## Percetual das categorias 📊
 
