@@ -52,28 +52,25 @@ Com base na pesquisa de campo e nos protótipos desenvolvidos, elaboramos histó
 A interface do projeto foi cuidadosamente projetada com base nas sugestões dos usuários obtidas na pesquisa de campo e nas histórias de usuários. A página inicial apresenta um menu de navegação com opções para buscar campeões por função, ordenar alfabeticamente e filtrar por categoria. Além disso, oferece links interativos para informações adicionais e para baixar o jogo.
 
 [Tela Principal do Site - Cards Front]
-
-
+&nbsp;
 
 ![site_interface01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/67d4f325-7b74-4a55-957b-78dc42daffa8)
-
-
+&nbsp;
 
 [Tela Principal do Site - Cards Back]
-
-
+&nbsp;
 
 ![site_interface02](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/7a27f388-c4ad-42d8-a422-09059ca3ea7b)
-
+&nbsp;
 
 ## Responsividade 📱
 
 A aplicação foi desenvolvida com responsividade em mente, proporcionando uma experiência agradável em dispositivos de diferentes tamanhos de tela. A interface se adapta para garantir que os jogadores possam acessar as informações dos campeões independentemente do dispositivo utilizado.
 
 
-| ![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ba7fefd6-c988-4417-afa6-37374298a9fd) | ![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9) |
+| ![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ba7fefd6-c988-4417-afa6-37374298a9fd) | &nbsp;
+![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/ad8890d1-644a-4285-acc9-efad698f7cb9) |
 
-|:---:|:---:|
 
 ## Seta de Retorno ⬆️
 
