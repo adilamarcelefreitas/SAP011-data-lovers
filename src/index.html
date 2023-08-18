@@ -30,7 +30,7 @@
         <!-- <div class="menu-icon"> -->
         <i id="hamburguer" class="material-icons" onclick="clickMenu()">menu</i>
 
-        <ul class="menu" id="itens">
+        <ul class="menu" id="items">
           <li>
             <div class="search-container">
               <input type="text" class="search-input" placeholder="">
@@ -138,11 +138,11 @@
 
   <script>
     function clickMenu() {
-      var itens = document.querySelector('.menu');
-      if (itens.style.display == "block") {
-        itens.style.display = "none";
+      var items = document.querySelector('.menu');
+      if (items.style.display == "block") {
+        items.style.display = "none";
       } else {
-        itens.style.display = "block";
+        items.style.display = "block";
       }
     }
   </script>
