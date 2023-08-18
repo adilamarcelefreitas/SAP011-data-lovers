@@ -52,20 +52,23 @@ Com base na pesquisa de campo e nos protótipos desenvolvidos, elaboramos histó
 A interface do projeto foi cuidadosamente projetada com base nas sugestões dos usuários obtidas na pesquisa de campo e nas histórias de usuários. A página inicial apresenta um menu de navegação com opções para buscar campeões por função, ordenar alfabeticamente e filtrar por categoria. Além disso, oferece links interativos para informações adicionais e para baixar o jogo.
 
 [Tela Principal do Site - Cards Front]
-<img src="imagens/site_interface01.png">
+![site_interface01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/67d4f325-7b74-4a55-957b-78dc42daffa8)
 [Tela Principal do Site - Cards Back]
-<img src="imagens/site_interface02.png">
+![site_interface02](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/7a27f388-c4ad-42d8-a422-09059ca3ea7b)
+
 
 ## Responsividade 📱
 
 A aplicação foi desenvolvida com responsividade em mente, proporcionando uma experiência agradável em dispositivos de diferentes tamanhos de tela. A interface se adapta para garantir que os jogadores possam acessar as informações dos campeões independentemente do dispositivo utilizado.
 
-<img src="imagens/mobile01.jpg">
-<img src="imagens/mobile02.jpg">
-<img src="imagens/mobile03.jpg">
-<img src="imagens/mobile04.jpg">
+![mobile01](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/bc23b8a8-0fda-4431-9799-3c3b2a60b7f0)
+![mobile02](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/1a97f979-1aa5-44ea-989e-6d8a4d14c9d1)
+![mobile03](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/d84ae76b-2722-4784-8790-f449a14c632c)
+![mobile04](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/438ec064-38f5-41f4-87b7-6ee7c293dbab)
 
 ## Seta de Retorno ⬆️
+
+![site_interface_seta](https://github.com/lauradefreitas2/SAP011-data-lovers/assets/137333338/cb27988d-6a50-4951-bec3-61e150a61f80)
 
 Foi adicionada uma seta de retorno no site, que aparecerá quando o usuário estiver na terceira fileira de cards. Essa seta permite que o usuário retorne rapidamente ao início da página, melhorando a experiência de navegação.
 
