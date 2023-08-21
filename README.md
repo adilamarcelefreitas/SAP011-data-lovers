@@ -15,7 +15,7 @@ Acesse o projeto: (https://lauradefreitas2.github.io/SAP011-data-lovers/src) �
 - HTML
 - CSS
 - JavaScript Vanilla
-- [Figma](https://www.figma.com) - Utilizado para prototipagem 🎨
+- [Figma](https://www.figma.com/file/zbZ2SbgTRotAWKeKWAbvKc/Untitled?type=design&node-id=0-1&mode=design&t=5p3WdLvJxVf7vAX9-0) - Utilizado para prototipagem 🎨
 
 ## Índice 📌
 
